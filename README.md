@@ -38,6 +38,24 @@
 - YOLOv8m/l **mAP50 ≈ 0.78**, 4-class 분류 **97.4%**, hard negative 1,253장.
 - 전체 실험 비교: [`final_model_comparison.csv`](final_model_comparison.csv) (60행).
 
+## 📊 실험 결과 & 시각화
+
+| 모델 | mAP50 | 비고 |
+|---|---|---|
+| YOLOv8s (30ep) | 0.71 | 베이스라인 |
+| **YOLOv8m (50ep, mixup·copy_paste)** | **≈ 0.78** | 채택 |
+| DeepCNN 4-class (2차 분류기) | 정확도 **97.4%** | 배경 오탐 제거 |
+| Hybrid (YOLO+ResNet) 5변형 | 0.65~0.67 | 단독 YOLO 미만 → 기각 |
+
+<p>
+<img src="assets/detection_result.jpg" width="46%"/> <img src="assets/pr_curve.png" width="46%"/>
+</p>
+<p>
+<img src="assets/training_curve.png" width="46%"/> <img src="assets/confusion_matrix.png" width="46%"/>
+</p>
+
+> 좌상: 실제 탐지 결과 · 우상: PR 곡선 · 좌하: 학습 곡선 · 우하: 혼동행렬
+
 ## 🖥 산림청용 관제 앱 (Streamlit) — 실모델 구동
 **학습된 YOLOv8s로 이미지·영상에서 연기/불을 실제 탐지**하고 경보 단계(정상/연기 주의/화재 경보)를 산출.
 ```bash
