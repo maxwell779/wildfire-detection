@@ -1,0 +1,13 @@
+path: ./data          # 주피터 파일 기준 data 폴더 위치
+train: train/images   # ./data/train/images
+val: val/images       # ./data/val/images
+test: test/images     # ./data/test/images
+
+# Classes
+names: ['smoke', 'fire']  # Replace with your actual class names
+
+# Counts
+nc: 2  # number of classes
+train_count: 14122
+val_count: 3099
+test_count: 4306

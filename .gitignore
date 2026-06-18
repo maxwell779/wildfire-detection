@@ -1,0 +1,26 @@
+# 데이터·모델·산출물 (대용량 — repo 제외)
+data/
+datasets/
+pill/
+classification_data/
+runs/
+wandb/
+hard_negatives/
+analysis_results/
+*.pth
+*.pt
+*.pkl
+*.onnx
+*.zip
+*.pptx
+*.pdf
+*.hwpx
+
+# 환경 / 캐시
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store

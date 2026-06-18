@@ -1,0 +1,4 @@
+streamlit
+pandas
+pillow
+# 선택(객체탐지 데모용): ultralytics

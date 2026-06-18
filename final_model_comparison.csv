@@ -1,0 +1,59 @@
+Model_Name,Type,Epochs,Precision,Recall,mAP50,Accuracy,Loss
+YOLOv8s,Object Detection,1,0.2492,0.3168,0.1925,-,2.0436
+YOLOv8s,Object Detection,2,0.2981,0.3639,0.2723,-,1.9793
+YOLOv8s,Object Detection,3,0.4618,0.3899,0.3736,-,1.8984
+YOLOv8s,Object Detection,4,0.4649,0.4145,0.3865,-,1.8308
+YOLOv8s,Object Detection,5,0.4915,0.4468,0.4444,-,1.7727
+YOLOv8s,Object Detection,6,0.5209,0.4667,0.4571,-,1.7328
+YOLOv8s,Object Detection,7,0.4861,0.4754,0.4546,-,1.7168
+YOLOv8s,Object Detection,8,0.5807,0.5088,0.5347,-,1.667
+YOLOv8s,Object Detection,9,0.5879,0.5281,0.5483,-,1.6568
+YOLOv8s,Object Detection,10,0.5994,0.5409,0.5746,-,1.6271
+YOLOv8s,Object Detection,11,0.5879,0.4928,0.5129,-,1.6208
+YOLOv8s,Object Detection,12,0.6013,0.5628,0.5678,-,1.607
+YOLOv8s,Object Detection,13,0.6336,0.5611,0.6081,-,1.5891
+YOLOv8s,Object Detection,14,0.6516,0.5328,0.5954,-,1.5737
+YOLOv8s,Object Detection,15,0.6244,0.5788,0.6063,-,1.5659
+YOLOv8s,Object Detection,16,0.645,0.5708,0.6223,-,1.5574
+YOLOv8s,Object Detection,17,0.6522,0.5922,0.6354,-,1.5252
+YOLOv8s,Object Detection,18,0.6689,0.5922,0.6496,-,1.5194
+YOLOv8s,Object Detection,19,0.6727,0.6078,0.6592,-,1.5104
+YOLOv8s,Object Detection,20,0.6987,0.6037,0.6687,-,1.4983
+YOLOv8s,Object Detection,21,0.6985,0.6058,0.6664,-,1.5698
+YOLOv8s,Object Detection,22,0.6861,0.6,0.66,-,1.5371
+YOLOv8s,Object Detection,23,0.6919,0.6143,0.6751,-,1.5145
+YOLOv8s,Object Detection,24,0.6975,0.6225,0.6878,-,1.5057
+YOLOv8s,Object Detection,25,0.6978,0.6243,0.689,-,1.4903
+YOLOv8s,Object Detection,26,0.7169,0.6242,0.6943,-,1.4797
+YOLOv8s,Object Detection,27,0.7213,0.6232,0.6996,-,1.4566
+YOLOv8s,Object Detection,28,0.7162,0.6309,0.7061,-,1.4322
+YOLOv8s,Object Detection,29,0.7083,0.6391,0.7061,-,1.424
+YOLOv8s,Object Detection,30,0.7201,0.6415,0.7099,-,1.3986
+DeepCNN_640_Ep1,Classification,1,-,-,-,0.9086,0.2514
+DeepCNN_640_Ep2,Classification,2,-,-,-,0.9283,0.1999
+DeepCNN_640_Ep3,Classification,3,-,-,-,0.9373,0.1866
+DeepCNN_640_Ep4,Classification,4,-,-,-,0.9431999999999999,0.1653
+DeepCNN_640_Ep5,Classification,5,-,-,-,0.9531000000000001,0.1401
+DeepCNN_640_Ep6,Classification,6,-,-,-,0.9468000000000001,0.1505
+DeepCNN_640_Ep7,Classification,7,-,-,-,0.9390000000000001,0.1696
+DeepCNN_640_Ep8,Classification,8,-,-,-,0.9594,0.1286
+DeepCNN_640_Ep9,Classification,9,-,-,-,0.9595999999999999,0.123
+DeepCNN_640_Ep10,Classification,10,-,-,-,0.9570000000000001,0.1298
+DeepCNN_640_Ep11,Classification,11,-,-,-,0.9589,0.1289
+DeepCNN_640_Ep12,Classification,12,-,-,-,0.9676,0.1073
+DeepCNN_640_Ep13,Classification,13,-,-,-,0.9642000000000001,0.112
+DeepCNN_640_Ep14,Classification,14,-,-,-,0.966,0.1095
+DeepCNN_640_Ep15,Classification,15,-,-,-,0.9688,0.105
+DeepCNN_640_Ep16,Classification,16,-,-,-,0.963,0.115
+DeepCNN_640_Ep17,Classification,17,-,-,-,0.9645999999999999,0.1131
+DeepCNN_640_Ep18,Classification,18,-,-,-,0.9691,0.1028
+DeepCNN_640_Ep19,Classification,19,-,-,-,0.97,0.0942
+DeepCNN_640_Ep20,Classification,20,-,-,-,0.9672,0.1052
+ResNet50,Classification,20,-,-,-,0.9676158570630933,0.1284023856045072
+YOLOv8s + SAHI,Tiling Inference,-,0.6597,0.6424,0.6509,-,-
+Hybrid(SAHI+ResNet50),Hybrid Final,-,0.6597,0.6424,0.6511,-,-
+Hybrid(SAHI+ResNet50)_Strict,Hybrid Final,-,0.6537,0.5214,0.5875,-,-
+Hybrid(YOLOv8s+ResNet50)_NoSAHI,Hybrid Final,-,0.6902,0.6567,0.6734,-,-
+Hybrid_Prescribed(T0.8_C0.1),Hybrid Final,,0.4458,0.559,0.5024,,
+DeepCNN_640_4Class,Classification_4Class,20,-,-,-,0.9743,0.0978
+ResNet50_4Class,Classification_4Class,20,-,-,-,0.9676,0.1095
