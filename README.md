@@ -1,5 +1,9 @@
 # 🔥 산불·연기 실시간 탐지 (YOLO + ResNet Hybrid)
 
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://wildfire-detection-magbcdezyjoskgcholyiyw.streamlit.app/)
+
+**🖥 [▶️ 라이브 데모 (Streamlit)](https://wildfire-detection-magbcdezyjoskgcholyiyw.streamlit.app/)** — 실제 학습 모델로 바로 구동(내장 샘플 포함)
+
 > 감시 영상에서 산불·연기를 실시간 탐지하되, **YOLO 후보를 ResNet으로 2차 검증하는 Hybrid 구조**로 구름·안개 오탐을 줄인 딥러닝 객체탐지 프로젝트.
 
 | 항목 | 내용 |
