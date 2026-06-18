@@ -38,20 +38,23 @@
 - YOLOv8m/l **mAP50 ≈ 0.78**, 4-class 분류 **97.4%**, hard negative 1,253장.
 - 전체 실험 비교: [`final_model_comparison.csv`](final_model_comparison.csv) (60행).
 
-## 🖥 데모 (Streamlit)
-**모델 실험 비교 대시보드**(실데이터 CSV 시각화) + 파이프라인 설명 + (선택)객체탐지 데모.
+## 🖥 산림청용 관제 앱 (Streamlit) — 실모델 구동
+**학습된 YOLOv8s로 이미지·영상에서 연기/불을 실제 탐지**하고 경보 단계(정상/연기 주의/화재 경보)를 산출.
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
+- 🖼 이미지 탐지: 박스 오버레이 + 화염/연기 카운트 + 경보 배너
+- 🎬 영상 탐지: 프레임 샘플링 추적 + 화재 감지 프레임 집계
 
 ## 📁 구조
 ```
-app.py                           # Streamlit 데모(실험 비교 대시보드)
+app.py                           # 산림청용 관제 앱 (실모델 YOLO 탐지)
+models/fire_smoke_yolov8s.pt     # 학습된 YOLOv8s 가중치(smoke/fire) — 앱이 로드
 wildfire_hybrid_modeling.ipynb   # 본인 작업: 탐지·분류·Hybrid 전 과정
 final_model_comparison.csv       # 모델/조건별 실험 비교표
 data.yaml                        # YOLO 데이터 설정
 scripts/                         # 데이터 증강 패키지(팀 전달용으로 문서화)
 requirements.txt
 ```
-> 데이터셋·모델 가중치(.pt/.pth)·실행 산출물은 용량 관계로 제외했습니다. 학습 과정·결과는 노트북에 포함되어 있습니다.
+> 학습 데이터셋은 용량 관계로 제외했으나, **학습된 YOLOv8s 가중치를 포함**해 앱이 바로 실탐지합니다. 분류기(.pth)·전체 실행 산출물은 제외.

@@ -24,3 +24,10 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .DS_Store
+
+# 모델 파일은 앱 구동용으로 커밋
+!models/
+!models/*.pt
+!models/*.pkl
+!models/*.npy
+!models/*.json
