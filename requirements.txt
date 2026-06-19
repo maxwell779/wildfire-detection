@@ -1,5 +1,8 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 streamlit
 ultralytics
+torch
+torchvision
 numpy
 pandas
 pillow
