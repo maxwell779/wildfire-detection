@@ -169,10 +169,19 @@ with tab1:
         cMap, cSum = st.columns([1.5, 1])
         with cMap:
             st.markdown("#### 🗺 관제 지도 — 카메라 위치·경보 강조")
-            cmap = {"fire": [239, 68, 68], "smoke": [245, 158, 11], "clear": [34, 197, 94]}
-            mapdf = pd.DataFrame([{"lat": f["lat"], "lon": f["lon"], "color": cmap[f["lv"]],
-                "size": 55000 if f["lv"] != "clear" else 18000} for f in feeds])
-            st.map(mapdf, latitude="lat", longitude="lon", color="color", size="size")
+            cmap = {"fire": "#ef4444", "smoke": "#f59e0b", "clear": "#22c55e"}
+            gmap = go.Figure(go.Scattergeo(
+                lon=[f["lon"] for f in feeds], lat=[f["lat"] for f in feeds],
+                text=[f"{f['name']}<br>🔥{f['fire']} 💨{f['smoke']}" for f in feeds],
+                mode="markers+text", textposition="top center", textfont=dict(size=10),
+                marker=dict(size=[22 if f["lv"] != "clear" else 12 for f in feeds],
+                            color=[cmap[f["lv"]] for f in feeds],
+                            line=dict(width=1, color="white"))))
+            gmap.update_geos(scope="asia", center=dict(lat=36.6, lon=127.9), projection_scale=5.2,
+                             showland=True, landcolor="#eef3f0", showocean=True, oceancolor="#dbeafe",
+                             showcountries=True, countrycolor="#cbd5e1", resolution=50)
+            gmap.update_layout(height=340, margin=dict(l=0, r=0, t=0, b=0))
+            st.plotly_chart(gmap, use_container_width=True)
         with cSum:
             st.markdown("#### 📊 채널 상태 요약")
             for f in feeds:
