@@ -31,3 +31,14 @@ __pycache__/
 !models/*.pkl
 !models/*.npy
 !models/*.json
+
+# --- KDT 작업폴더 로컬 원본 (git 추적 제외, 로컬 보존) ---
+사진/
+docs/
+mini*.ipynb
+*_kwon.ipynb
+source_Lesson*.ipynb
+final_model_comparison_full.csv
+model_comparison_result.png
+output.png
+output2.png
