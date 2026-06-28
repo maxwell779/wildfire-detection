@@ -130,19 +130,17 @@ k4.metric("평균 탐지 신뢰도", f"{np.mean(allconf)*100:.0f}%" if allconf e
 st.divider()
 cMap, cSum = st.columns([1.5, 1])
 with cMap:
-    st.markdown("#### 🗺 관제 지도 — 카메라 위치·경보 강조")
-    cmap = {"fire": "#ef4444", "smoke": "#f59e0b", "clear": "#22c55e"}
-    gmap = go.Figure(go.Scattergeo(
-        lon=[f["lon"] for f in feeds], lat=[f["lat"] for f in feeds],
-        text=[f"{f['name']}<br>🔥{f['fire']} 💨{f['smoke']}" for f in feeds],
-        mode="markers+text", textposition="top center", textfont=dict(size=10),
-        marker=dict(size=[22 if f["lv"] != "clear" else 12 for f in feeds],
-                    color=[cmap[f["lv"]] for f in feeds], line=dict(width=1, color="white"))))
-    gmap.update_geos(scope="asia", center=dict(lat=36.6, lon=127.9), projection_scale=5.2,
-                     showland=True, landcolor="#eef3f0", showocean=True, oceancolor="#dbeafe",
-                     showcountries=True, countrycolor="#cbd5e1", resolution=50)
-    gmap.update_layout(height=340, margin=dict(l=0, r=0, t=0, b=0))
-    st.plotly_chart(gmap, use_container_width=True)
+    st.markdown("#### 📈 모델 성능 (클래스별 · 검증셋)")
+    perf = go.Figure()
+    perf.add_bar(name="💨 연기(smoke)", x=["Precision", "Recall", "mAP50"], y=[0.764, 0.716, 0.764],
+                 marker_color="#f59e0b", text=["0.764", "0.716", "0.764"], textposition="outside")
+    perf.add_bar(name="🔥 화염(fire)", x=["Precision", "Recall", "mAP50"], y=[0.676, 0.568, 0.656],
+                 marker_color="#ef4444", text=["0.676", "0.568", "0.656"], textposition="outside")
+    perf.update_layout(barmode="group", height=300, margin=dict(l=0, r=0, t=10, b=0),
+                       yaxis=dict(range=[0, 1.05], tickformat=".0%"), template="simple_white",
+                       legend=dict(orientation="h", y=1.18, x=0))
+    st.plotly_chart(perf, use_container_width=True)
+    st.caption("YOLOv8s · 검증 3,099장 · 전체 mAP50 ≈ 0.78 (smoke/fire 2-class)")
 with cSum:
     st.markdown("#### 📊 채널 상태 요약")
     for f in feeds:
