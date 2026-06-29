@@ -17,8 +17,10 @@ COLORS = {"smoke": (255, 170, 0), "fire": (0, 60, 255)}
 st.markdown("""<style>
 html, body, [class*="css"], .stMarkdown, [data-testid="stMetricValue"], [data-testid="stMetricLabel"]{
   font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',sans-serif;}
-/* rerun 시 요소 재렌더로 인한 흔들림(페이드/애니메이션 재생) 억제 */
-[data-testid="stElementContainer"], .element-container{animation:none !important;}
+/* ── 흔들림(flicker) 종합 억제 ── */
+html{overflow-y:scroll;}                               /* 스크롤바 항상 표시 → 콘텐츠 늘 때 가로 밀림 방지 */
+*,*::before,*::after{animation:none !important;}       /* Streamlit 요소 페이드인/모션 제거 */
+[data-testid="stImage"] img{display:block;height:auto;} /* 이미지 디코드 시 높이 점프 완화 */
 #MainMenu,footer,[data-testid="stToolbar"]{visibility:hidden;}
 .block-container{padding-top:1.2rem;max-width:1350px;}
 [data-testid="stMetric"]{background:#fff;border:1px solid #f0e6e6;border-radius:16px;
