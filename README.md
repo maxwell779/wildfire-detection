@@ -1,8 +1,9 @@
 # 🔥 산불·연기 실시간 탐지 (YOLO + ResNet Hybrid)
 
 [![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://wildfire-detection-magbcdezyjoskgcholyiyw.streamlit.app/)
+[![HF Space](https://img.shields.io/badge/🤗%20Live-HF%20Spaces-FFD21E)](https://huggingface.co/spaces/maxwell779/wildfire-detection)
 
-**🖥 [▶️ 라이브 데모 (Streamlit)](https://wildfire-detection-magbcdezyjoskgcholyiyw.streamlit.app/)** — 실제 학습 모델로 바로 구동(내장 샘플 포함)
+**🤗 [실시간 YOLO 데모 (HF Spaces)](https://huggingface.co/spaces/maxwell779/wildfire-detection)** — 이미지 업로드·웹캠으로 실시간 탐지 · **🖥 [Streamlit 데모](https://wildfire-detection-magbcdezyjoskgcholyiyw.streamlit.app/)** — 관제 대시보드(정적, 항상 안정)
 
 <img src="assets/app_demo.png" width="92%"/>
 
