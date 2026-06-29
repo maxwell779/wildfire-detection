@@ -15,9 +15,10 @@ DETS = json.load(open(os.path.join(HERE, "precomputed_dets.json"), encoding="utf
 COLORS = {"smoke": (255, 170, 0), "fire": (0, 60, 255)}
 
 st.markdown("""<style>
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 html, body, [class*="css"], .stMarkdown, [data-testid="stMetricValue"], [data-testid="stMetricLabel"]{
-  font-family:'Pretendard','Malgun Gothic',sans-serif;}
+  font-family:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',sans-serif;}
+/* rerun 시 요소 재렌더로 인한 흔들림(페이드/애니메이션 재생) 억제 */
+[data-testid="stElementContainer"], .element-container{animation:none !important;}
 #MainMenu,footer,[data-testid="stToolbar"]{visibility:hidden;}
 .block-container{padding-top:1.2rem;max-width:1350px;}
 [data-testid="stMetric"]{background:#fff;border:1px solid #f0e6e6;border-radius:16px;
