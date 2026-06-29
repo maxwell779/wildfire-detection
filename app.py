@@ -103,19 +103,15 @@ if not samples:
     st.info("samples 폴더에 이미지가 없습니다.")
     st.stop()
 
-# 합성 카메라 메타(강원·경북·지리·한라 산지 관제 컨셉)
-CAMS = [("CH1 설악-A", 38.12, 128.46), ("CH2 오대-B", 37.79, 128.54),
-        ("CH3 태백-C", 37.16, 128.99), ("CH4 소백-D", 36.96, 128.46),
-        ("CH5 지리-E", 35.34, 127.73), ("CH6 한라-F", 33.36, 126.53)]
 if "wf_focus" not in st.session_state: st.session_state.wf_focus = 0
 if "wf_hist" not in st.session_state: st.session_state.wf_hist = []
 
 feeds = []
-for idx, p in enumerate(samples[:len(CAMS)]):
+for idx, p in enumerate(samples):
     rgb, counts, dets = draw(p, conf)
     fire, smoke = counts.get("fire", 0), counts.get("smoke", 0)
-    nm, la, lo = CAMS[idx]
-    feeds.append(dict(i=idx, name=nm, lat=la, lon=lo, rgb=rgb, fire=fire, smoke=smoke,
+    nm = f"CH-{idx+1:02d}"
+    feeds.append(dict(i=idx, name=nm, rgb=rgb, fire=fire, smoke=smoke,
                       dets=dets, lv=("fire" if fire else "smoke" if smoke else "clear")))
 nfire = sum(1 for f in feeds if f["lv"] == "fire")
 nsmoke = sum(1 for f in feeds if f["lv"] == "smoke")
